@@ -1,14 +1,27 @@
 just Exercise
 
-1. install nodejs
+info:
+reactjs 0.14.3
 
-2. npm install --global babel-cli
-3. npm install babel-preset-react
+
+
+usage:
+1. 
+install nodejs
+#u needit...
+
+2. 
+$npm install --global babel-cli
+#if u not installend
+
+3. 
+$npm install
+#make it run, package.json
 
 4. run 
-babel --presets react src --watch --out-dir build
-in CLI, e.g.
+$babel --presets react src --watch --out-dir build
+in CLI
+e.g.
 /Users/[ACCOUNT]/Projects/test
-$ babel --presets react src --watch --out-dir build
 
 5. let's roll

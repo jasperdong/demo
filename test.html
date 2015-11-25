@@ -2,25 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello React!</title>
-    <script src="https://fb.me/react-0.14.2.min.js"></script>
-    <script src="https://fb.me/react-dom-0.14.2.min.js"></script>
+    <title>React+FireBase : Say same thing...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://fb.me/react-0.14.3.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.js"></script>
     <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="node_modules/reactfire/dist/reactfire.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
     <style>
-    /*.commentList{color:red;}*/
+    label{margin:0 10px}
+    .name{font-size:16px}
+    /*.removeitem{color:red;margin-left:10px;cursor:pointer;font-size:80%;}*/
+    /*.removeitem:after{content:"x"}*/
     </style>
   </head>
   <body>
-    <div id="example"></div>
-    <div id="content"></div>
-    <script src="build/myreact.js"></script>
-    <!-- // <script type="text/babel" src="src/myreact.js"></script> -->
-    <!-- <div>
-      auth : <input type="text" id="auth">
-      comment : <input type="text" id="comment">
-      <input type="submit" value="submit" id="submit">
-    </div> -->
-    <p>done</p>
+    <div class="container">
+      <div id="content" class="row"></div>
+      <script src="build/myreact.js"></script>
+      <!-- // <script type="text/babel" src="src/myreact.js"></script> -->
+    </div>
   </body>
 </html>
