@@ -9,30 +9,27 @@ reactjs 0.14.3
 
 
 #usage:
-1. 
-u need...
+- u need...
+
 install nodejs
 
-
-2. 
-if u not installend
+- if u not installend
 ```html
 $npm install --global babel-cli
 ```
 
-3. 
-make it run, package.json
+- make it run, package.json
 ```html
 $npm install
 ```
 
-4. run 
+- run 
 ```html
 $babel --presets react src --watch --out-dir build
 ```
-in CLI
-e.g.
+in CLI  
+e.g.  
 /Users/[ACCOUNT]/Projects/test
 
-5. let's roll
+- let's roll
 
