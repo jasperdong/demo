@@ -42,6 +42,13 @@ var TodoApp3 = React.createClass({
     };
   },
 
+  componentDidUpdate: function () {
+    document.body.scrollTop = 9999999;
+  },
+  // componentWillUpdate: function() {
+  //   console.log('aa');
+  // },
+
   componentWillMount: function () {
     var ref = new Firebase(this.props.fire_url);
     this.bindAsArray(ref.limitToLast(50), 'items');
@@ -71,6 +78,8 @@ var TodoApp3 = React.createClass({
       text: this.state.text,
       date: Date.now()
     });
+    document.body.scrollTop = 9999999;
+
     this.setState({
       text: '',
       name: ''
