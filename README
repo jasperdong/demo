@@ -1,0 +1,27 @@
+just Exercise
+
+info:
+reactjs 0.14.3
+
+
+
+usage:
+1. 
+install nodejs
+#u needit...
+
+2. 
+$npm install --global babel-cli
+#if u not installend
+
+3. 
+$npm install
+#make it run, package.json
+
+4. run 
+$babel --presets react src --watch --out-dir build
+in CLI
+e.g.
+/Users/[ACCOUNT]/Projects/test
+
+5. let's roll
