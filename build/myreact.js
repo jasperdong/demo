@@ -44,7 +44,7 @@ var TodoApp3 = React.createClass({
 
   componentWillMount: function () {
     var ref = new Firebase(this.props.fire_url);
-    this.bindAsArray(ref.limitToLast(25), 'items');
+    this.bindAsArray(ref.limitToLast(50), 'items');
   },
 
   onChange: function (e) {
