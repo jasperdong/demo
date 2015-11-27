@@ -49,16 +49,25 @@ var TodoApp3 = React.createClass({
   componentDidUpdate: function () {
     scrollTop();
   },
-  //   var FirebaseTokenGenerator = require("firebase-token-generator");
-  // var tokenGenerator = new FirebaseTokenGenerator("<YOUR_FIREBASE_SECRET>");
-  // var token = tokenGenerator.createToken({uid: "1", some: "arbitrary", data: "here"});
+
   // componentWillUpdate: function() {
   //   console.log('aa');
   // },
 
   componentWillMount: function () {
     var ref = new Firebase(this.props.fire_url);
-    this.bindAsArray(ref.limitToLast(50), 'items');
+    var _this = this;
+
+    var tokenGenerator = new FirebaseTokenGenerator("AO7JEdjjajFMQCwUNrGD75gZJ4zSFslZMSXoVq9V");
+    var token = tokenGenerator.createToken({ uid: Date.now().toString() });
+    ref.authWithCustomToken(token, function (error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+        alert('Firebase load fail...');
+      } else {
+        _this.bindAsArray(ref.limitToLast(50), 'items');
+      }
+    });
   },
 
   onChange: function (e) {
