@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "babel-preset-react": "^6.1.18",
+    "firebase-token-generator": "^2.0.0",
     "reactfire": "^0.5.1"
   },
   "devDependencies": {},
