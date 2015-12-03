@@ -1,39 +1,46 @@
 
 var TodoList3 = React.createClass({
-  displayName: "TodoList3",
+  displayName: 'TodoList3',
 
   render: function () {
     var _this = this;
     var createItem = function (item, index) {
       item.label = item.label || 'info';
       var className = "name label label-" + item.label;
+      var date = new Date(item.date);
+      item.date = date.getFullYear() + '/' + parseInt(date.getMonth() + 1) + '/' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
       return React.createElement(
-        "li",
-        { key: index, className: "alert alert-success" },
+        'li',
+        { key: index, className: 'alert alert-success' },
         React.createElement(
-          "h3",
+          'h3',
           { className: className },
           item.name
         ),
-        " say : ",
+        ' say : ',
         item.text,
         React.createElement(
-          "button",
-          { type: "button", className: "btn btn-danger btn-xs btn-delete pull-right", onClick: _this.props.removeItem.bind(null, item['.key']) },
-          "x"
+          'button',
+          { type: 'button', className: 'btn btn-danger btn-xs btn-delete pull-right', onClick: _this.props.removeItem.bind(null, item['.key']) },
+          'x'
+        ),
+        React.createElement(
+          'div',
+          { className: 'pull-right' },
+          item.date
         )
       );
     };
     return React.createElement(
-      "ul",
-      { className: "list-unstyled" },
+      'ul',
+      { className: 'list-unstyled' },
       this.props.items.map(createItem)
     );
   }
 });
 
 var TodoApp3 = React.createClass({
-  displayName: "TodoApp3",
+  displayName: 'TodoApp3',
 
   mixins: [ReactFireMixin],
 
@@ -117,77 +124,77 @@ var TodoApp3 = React.createClass({
       w100: { width: '100px' }
     };
     return React.createElement(
-      "div",
+      'div',
       null,
       React.createElement(TodoList3, { items: this.state.items, removeItem: this.removeItem }),
-      React.createElement("hr", null),
+      React.createElement('hr', null),
       React.createElement(
-        "div",
-        { className: "row" },
+        'div',
+        { className: 'row' },
         React.createElement(
-          "form",
-          { className: "form-inline", onSubmit: this.handleSubmit },
+          'form',
+          { className: 'form-inline', onSubmit: this.handleSubmit },
           React.createElement(
-            "div",
-            { className: "form-group" },
+            'div',
+            { className: 'form-group' },
             React.createElement(
-              "label",
+              'label',
               null,
-              "Color :",
+              'Color :',
               React.createElement(
-                "select",
-                { className: "form-control", onChange: this.onChangeLabel, value: this.props.selected },
+                'select',
+                { className: 'form-control', onChange: this.onChangeLabel, value: this.props.selected },
                 React.createElement(
-                  "option",
-                  { value: "info" },
-                  "Info"
+                  'option',
+                  { value: 'info' },
+                  'Info'
                 ),
                 React.createElement(
-                  "option",
-                  { value: "primary" },
-                  "Primary"
+                  'option',
+                  { value: 'primary' },
+                  'Primary'
                 ),
                 React.createElement(
-                  "option",
-                  { value: "success" },
-                  "Success"
+                  'option',
+                  { value: 'success' },
+                  'Success'
                 ),
                 React.createElement(
-                  "option",
-                  { value: "warning" },
-                  "Warning"
+                  'option',
+                  { value: 'warning' },
+                  'Warning'
                 ),
                 React.createElement(
-                  "option",
-                  { value: "danger" },
-                  "Danger"
+                  'option',
+                  { value: 'danger' },
+                  'Danger'
                 )
               )
             )
           ),
           React.createElement(
-            "div",
-            { className: "form-group" },
+            'div',
+            { className: 'form-group' },
             React.createElement(
-              "label",
+              'label',
               null,
-              "Name : ",
-              React.createElement("input", { className: "form-control", style: width.w100, onChange: this.onChangeName, value: this.state.name })
+              'Name : ',
+              React.createElement('input', { className: 'form-control', style: width.w100, onChange: this.onChangeName, value: this.state.name })
             )
           ),
           React.createElement(
-            "div",
-            { className: "form-group" },
+            'div',
+            { className: 'form-group' },
             React.createElement(
-              "label",
+              'label',
               null,
-              "Message : ",
-              React.createElement("input", { className: "form-control", style: width.w500, onChange: this.onChange, value: this.state.text })
+              'Message : ',
+              React.createElement('input', { className: 'form-control', style: width.w500, onChange: this.onChange, value: this.state.text })
             )
           ),
           React.createElement(
-            "button",
-            { type: "submit", className: "btn btn-primary" },
+            'button',
+            { type: 'submit', className: 'btn btn-primary' },
             'Add #' + (this.state.items.length + 1)
           )
         )
@@ -201,4 +208,4 @@ var scrollTop = function () {
   document.body.scrollTop = 9999999;
 };
 
-ReactDOM.render(React.createElement(TodoApp3, { fire_url: "https://reactjs-test.firebaseio.com/comments/" }), document.getElementById('content'));
+ReactDOM.render(React.createElement(TodoApp3, { fire_url: 'https://reactjs-test.firebaseio.com/comments/' }), document.getElementById('content'));
