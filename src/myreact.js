@@ -5,10 +5,15 @@ var TodoList3 = React.createClass({
     var createItem = function(item, index) {
       item.label = item.label || 'info';
       var className = "name label label-" + item.label;
+      var date = new Date(item.date);
+      item.date = date.getFullYear() + '/' + parseInt(date.getMonth()+1) + '/' + date.getDate() 
+                  + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
       return (
         <li key={ index } className="alert alert-success">
           <h3 className={className}>{item.name}</h3> say : { item.text }
+
           <button type="button" className="btn btn-danger btn-xs btn-delete pull-right" onClick={ _this.props.removeItem.bind(null, item['.key']) }>x</button>
+          <div className="pull-right">{ item.date }</div>
         </li>
       );
     };
